@@ -16,9 +16,7 @@ def decide_to_generate(state):
     print("---ASSESS GRADED DOCUMENTS---")
 
     if state["web_search"]:
-        print(
-            "---DECISION: NOT ALL DOCUMENTS ARE NOT RELEVANT TO QUESTION, INCLUDED"
-        )
+        print("---DECISION: NOT ALL DOCUMENTS ARE NOT RELEVANT TO QUESTION, INCLUDED")
         return WEBSEARCH
     else:
         print("---DECISION: GENERATE")
@@ -70,11 +68,7 @@ workflow.add_node(GENERATE, generate)
 workflow.add_node(WEBSEARCH, web_search)
 
 workflow.set_conditional_entry_point(
-    route_question,
-    {
-        WEBSEARCH: WEBSEARCH,
-        RETRIEVE: RETRIEVE
-    }
+    route_question, {WEBSEARCH: WEBSEARCH, RETRIEVE: RETRIEVE}
 )
 workflow.add_edge(RETRIEVE, GRADE_DOCUMENTS)
 
@@ -84,7 +78,7 @@ workflow.add_conditional_edges(
     {
         WEBSEARCH: WEBSEARCH,
         GENERATE: GENERATE,
-    }
+    },
 )
 
 workflow.add_conditional_edges(

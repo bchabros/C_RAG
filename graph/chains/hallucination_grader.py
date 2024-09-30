@@ -22,7 +22,7 @@ system = """You are a grader assessing whether an LLM generation is grounded in 
 hallucination_prompt = ChatPromptTemplate.from_messages(
     [
         ("system", system),
-        ("human", "Set of facts: \n\n {documents} \n\n LLM generation: {generation}")
+        ("human", "Set of facts: \n\n {documents} \n\n LLM generation: {generation}"),
     ]
 )
 

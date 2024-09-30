@@ -55,9 +55,10 @@ def test_hallucination_grader_answer_no() -> None:
     docs = retriever.invoke(question)
 
     res: GraderHallucinations = hallucination_grader.invoke(
-        {"documents": docs,
-         "generation": "In order to make a pizza we need to first start with the dough.",
-         }
+        {
+            "documents": docs,
+            "generation": "In order to make a pizza we need to first start with the dough.",
+        }
     )
     assert not res.binary_score
 
