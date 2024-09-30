@@ -34,7 +34,7 @@ The codebase of C-RAG
 
 #### 4. Main Files
 
-- **main** - main script contains the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information) 
+- **main** - main script contains the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information).         
 ![graph.png](graph.png)
 - **main_self_rag** - main script similar to previous one but self check if info from websearch was useful and model does hallucinate if yes then repeat until he won't get accept that it use relevant info and did not hallucinate.   
 ![graph_self_rag.png](graph_self_rag.png)
