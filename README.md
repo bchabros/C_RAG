@@ -35,8 +35,8 @@ The codebase of C-RAG
 #### 4. Main Files
 
 - **main** - main script contains the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information).         
-![graph.png](graph.png)
+![graph.png](graph/graph_png/graph_1.png)
 - **main_self_rag** - main script similar to previous one but self check if info from websearch was useful and model does hallucinate if yes then repeat until he won't get accept that it use relevant info and did not hallucinate.   
-![graph_self_rag.png](graph_self_rag.png)
+![graph_self_rag.png](graph/graph_png/graph_3.png)
 - **main_adaptive_rag** - main script devlop on first check so If question is about something about LLM then check document otherwise it will pass this process and use only websearch.   
-![graph_adaptive_rag.png](graph_adaptive_rag.png)
+![graph_adaptive_rag.png](graph/graph_png/graph_2.png)
