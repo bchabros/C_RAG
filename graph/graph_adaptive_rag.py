@@ -95,4 +95,4 @@ workflow.add_edge(GENERATE, END)
 
 app = workflow.compile()
 
-app.get_graph().draw_mermaid_png(output_file_path="graph_2.png")
+app.get_graph().draw_mermaid_png(output_file_path="graph_adaptive_rag.png")
