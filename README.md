@@ -2,14 +2,17 @@
 
 ## Introduction
 
-The codebase of C-RAG
+The codebase of C-RAG structures it contains 3 RAG Pipelines:
+- Classic C-RAG 
+- Self C-RAG
+- Adaptive RAG
 
 ### General information
 
 - This project uses conda as an environment manager. The user must have Anaconda or Miniconda installed.
 - This project uses git-hooks to check code quality when creating commits.
 
-### Repository!
+### Repository
 
 - https://github.com/bchabros/C_RAG.git
 
@@ -21,7 +24,7 @@ The codebase of C-RAG
 - Install conda (anaconda navigator version): https://anaconda.org/anaconda/conda
 - Make sure conda directory (`C:\Users\<USER>\AppData\Local\miniconda3`) or (`C:\Users\<USER>\AppData\Local\conda`) is added to PATH environment variable in Windows
 - Create conda environment from `env.yaml`: `conda env create -f env.yaml`
-- Activate environment: `conda activate leap-llm-backend`
+- Activate environment: `conda activate CRAG`
 
 #### 2. .env file
 
@@ -35,8 +38,13 @@ The codebase of C-RAG
 #### 4. Main Files
 
 - **main** - main script contains the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information).         
-![graph.png](graph/graph_png/graph_1.png)
+![graph_1.png](png/graph_1.png)
 - **main_self_rag** - main script similar to previous one but self check if info from websearch was useful and model does hallucinate if yes then repeat until he won't get accept that it use relevant info and did not hallucinate.   
-![graph_self_rag.png](graph/graph_png/graph_3.png)
+![graph_2.png](png/graph_2.png)
 - **main_adaptive_rag** - main script devlop on first check so If question is about something about LLM then check document otherwise it will pass this process and use only websearch.   
-![graph_adaptive_rag.png](graph/graph_png/graph_2.png)
+![graph_3.png](png/graph_3.png)
+
+#### 5. LangGraph Studio
+In repo is [langgraph.json](langgraph.json) which is compatible with LangGraph Studio: https://blog.langchain.dev/langgraph-studio-the-first-agent-ide/
+
+
