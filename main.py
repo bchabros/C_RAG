@@ -5,11 +5,7 @@ load_dotenv()
 
 
 if __name__ == "__main__":
-    options = {
-        "1": crag_app,
-        "2": self_rag_app,
-        "3": adaptive_app
-    }
+    options = {"1": crag_app, "2": self_rag_app, "3": adaptive_app}
 
     print("Choose an option:")
     print("1 - C-RAG")

@@ -7,6 +7,7 @@ from graph.graph_function import decide_to_generate
 
 load_dotenv()
 
+
 def build_workflow(add_grade_generation=False, conditional_entry_point=False):
     from graph.graph_function import (
         grade_generation_grounded_in_documents_and_question,
