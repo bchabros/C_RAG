@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The codebase of C-RAG structures it contains 3 RAG Pipelines:
+Th e codebase of C-RAG structures it contains 3 RAG Pipelines:
 - Classic C-RAG 
 - Self C-RAG
 - Adaptive RAG
@@ -35,16 +35,23 @@ The codebase of C-RAG structures it contains 3 RAG Pipelines:
 - Edit Run/Debug configurations in PyCharm and make sure to select the correct `.env` file and conda environment
 - In PyCharm choose `File -> Settings -> Python interpreter` and select `CRAG` environment
 
-#### 4. Main Files
+#### 4. Upload chroma vectorstore
 
-- **main** - main script contains the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information).         
+Before started using [main.py](main.py) you have to use [ingestion.py](ingestion.py) which create vector store based on three links. Of course, you can use your own links as well.
+
+#### 5. Main File:
+
+[main.py](main.py) - Run whole application. First You have to check which RAG want to use and then ask question.
+
+#### 5. RAG Algorithm
+- **C-RAG** - the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information).         
 ![graph_1.png](png/graph_1.png)
-- **main_self_rag** - main script similar to previous one but self check if info from websearch was useful and model does hallucinate if yes then repeat until he won't get accept that it use relevant info and did not hallucinate.   
+- **Self C-RAG** - similar to previous one but self check if info from websearch was useful and model does hallucinate if yes then repeat until he won't get accept that it use relevant info and did not hallucinate.   
 ![graph_2.png](png/graph_2.png)
-- **main_adaptive_rag** - main script devlop on first check so If question is about something about LLM then check document otherwise it will pass this process and use only websearch.   
+- **Adaptive Self C-RAG** - devlop on first check so If question is about something about LLM then check document otherwise it will pass this process and use only websearch.   
 ![graph_3.png](png/graph_3.png)
 
-#### 5. LangGraph Studio
+#### 6. LangGraph Studio
 In repo is [langgraph.json](langgraph.json) which is compatible with LangGraph Studio: https://blog.langchain.dev/langgraph-studio-the-first-agent-ide/
 
 

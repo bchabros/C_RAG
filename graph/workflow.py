@@ -9,6 +9,30 @@ load_dotenv()
 
 
 def build_workflow(add_grade_generation=False, conditional_entry_point=False):
+    """
+    This function constructs a workflow for processing based on given options.
+
+    Parameters:
+    - add_grade_generation (bool): If True, additional conditional edges for grade generation will be added.
+    - conditional_entry_point (bool): If True, the entry point will be conditionally set based on the routing of the question.
+
+    Returns:
+    - StateGraph: A configured workflow graph.
+
+    The workflow comprises common nodes: RETRIEVE, GRADE_DOCUMENTS, GENERATE, and WEBSEARCH.
+
+    - Entry Point:
+      - If conditional_entry_point is True, a conditional entry point is set based on the routing question.
+      - Otherwise, the entry point is set to RETRIEVE.
+
+    - Common Edges:
+      - An edge from RETRIEVE to GRADE_DOCUMENTS.
+      - Conditional edges from GRADE_DOCUMENTS to either WEBSEARCH or GENERATE, based on the decision function.
+      - An edge from WEBSEARCH to GENERATE, and an edge from GENERATE to END.
+
+    - Optional Additional Conditional Edges:
+      - If add_grade_generation is True, additional conditional edges for grade generation will be added from GENERATE, based on the grade generation function.
+    """
     from graph.graph_function import (
         grade_generation_grounded_in_documents_and_question,
         route_question,

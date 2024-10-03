@@ -1,11 +1,13 @@
-from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_core.runnables import RunnableSequence
 from langchain_openai import ChatOpenAI
 
 
 class GradeAnswer(BaseModel):
+    """
 
+    """
     binary_score: bool = Field(
         description="Answer addresses the question 'yes' or 'no'"
     )
