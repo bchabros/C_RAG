@@ -1,7 +1,7 @@
 {
   "dockerfile_lines": [],
   "graphs": {
-    "agent": "./graph/graph_rag.py:adaptive_app"
+    "agent": "./graph/graph_rag.py:self_rag_app"
   },
   "env": ".env",
   "python_version": "3.11",

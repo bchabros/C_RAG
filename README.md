@@ -41,7 +41,7 @@ Before started using [main.py](main.py) you have to use [ingestion.py](ingestion
 
 #### 5. Main File:
 
-[main.py](main.py) - Run whole application. First You have to check which RAG want to use and then ask question.
+[main.py](main.py) - It's based on basic streamlit library so to run app you have to run command `streamlit run main.py`
 
 #### 5. RAG Algorithm
 - **C-RAG** - the rag which grade documents if they relevant them use them, or it is not then use websearch (tavily to find additional information).         
