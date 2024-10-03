@@ -5,9 +5,8 @@ from langchain_openai import ChatOpenAI
 
 
 class GradeAnswer(BaseModel):
-    """
+    """ """
 
-    """
     binary_score: bool = Field(
         description="Answer addresses the question 'yes' or 'no'"
     )

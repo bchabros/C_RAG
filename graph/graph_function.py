@@ -67,13 +67,13 @@ def grade_generation_grounded_in_documents_and_question(state: GraphState) -> st
 def route_question(state: GraphState) -> str:
     """
 
-        Routes a question to the appropriate data source based on its content.
+    Routes a question to the appropriate data source based on its content.
 
-        Args:
-            state (GraphState): The current state containing the question to be routed.
+    Args:
+        state (GraphState): The current state containing the question to be routed.
 
-        Returns:
-            str: The destination to which the question has been routed. Either WEBSEARCH or RETRIEVE.
+    Returns:
+        str: The destination to which the question has been routed. Either WEBSEARCH or RETRIEVE.
     """
     print("---ROUTE QUESTION---")
     question = state["question"]

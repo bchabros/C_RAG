@@ -16,6 +16,7 @@ if __name__ == "__main__":
     if choice in options:
         question = input("Enter your question: ")
         app = options[choice]
-        print(app.invoke(input={"question": question}))
+        response = app.invoke(input={"question": question})
+        print(response["generation"])
     else:
         print("Invalid choice. Please run the program again and select a valid option.")
